@@ -1,0 +1,52 @@
+body{
+    background-color: rgb(236, 242, 255);
+}
+
+header{
+    z-index: 100; /*  para que siempre este por encima de los demas */
+}
+
+.description{
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+}
+
+.description:hover {
+    height: 80px;
+}
+
+.carrito{
+    background-color: #F8F9FA;
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 9px;
+}
+
+.table__productos{
+    display: flex;
+}
+
+.table__productos >img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.table__cantidad > input{
+    background-color: rgb(250, 246, 228);
+    width: 40px;
+    outline: 0;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
