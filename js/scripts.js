@@ -93,23 +93,24 @@ function renderCarrito(){
             const Content = `
 
                     <th scope="row">1</th>
-                    <td class="table__productos">
-                        <img src= ${item.img} alt="">
-                        <h6 class="title"> ${item.title}</h6>
-                    </td>
-                    <td class="table__precio"> 
-                        <p>${item.precio}</p> 
-                    </td>
-                    <td class="table__cantidad">
-                        <input type="number" min="1" value= ${item.cantidad} class="input__elemento" >
-                        <button class="delete btn btn-danger"> x </button>
-                    </td>
+                        <td class="table__productos">
+                            <img src= ${item.img} alt="">
+                            <h6 class="title"> ${item.title}</h6>
+                        </td>
+                        <td class="table__precio"> 
+                            <p>${item.precio}</p> 
+                        </td>
+                        <td class="table__cantidad">
+                            <input type="number" min="1" value= ${item.cantidad} class="input__elemento" >
+                            <button class="delete btn btn-danger"> x </button>
+                        </td>
 
             `
             tr.innerHTML = Content;
-            tbody.appendChild(tr)
+            tbody.append(tr)
 
             tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
+            tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
 
         })
         CarritoTotal()
@@ -117,7 +118,7 @@ function renderCarrito(){
 
 
 
-// A travez de "Number(item.precio.replace("$", ' ')".... le saca el simbolo $ al item precio... para volverlo un valor numerico.. para realizar la operacion matematica 
+// A travez de "Number(item.precio.replace("$", ' ')".... le saca el simbolo $(dolar) al item precio... para volverlo un valor numerico.. para realizar la operacion matematica 
 function CarritoTotal(){
     
     let Total = 0;
@@ -136,21 +137,29 @@ function CarritoTotal(){
 
 
 
+// ésta funcion ya viene con un evento ("e") que es del evento click
 // "ItemCarrito" es el componente padre del boton "buttonDelete"
 // --> "trim()" --> quita los espacios a los lados y esto garantiza que esten iguales
+// recorre la matriz a traves del "for"
+// "carrito.splice(i, 1)" eliminamos un elemento dentro del carrito (i:posicion donde este el elemnto...1: cantidad de elem a eliminar)
 
 function removeItemCarrito (e){
     const buttonDelete = e.target
     const tr = buttonDelete.closest('.ItemCarrito')
-    const title = tr.querySelector('.title').textContent
+    const title = tr.querySelector('.title').textContent;
 
         for(let i=0; i<carrito.length; i++){
             if(carrito[i].title.trim() === title.trim()){
                 carrito.splice(i, 1)
+                console.log('hola mundo')
             }
         }
 
     tr.remove()
+    CarritoTotal()
 }
 
-
+function sumaCantidad(e){
+    const suma = e.target
+    const tr = sumaImput.closest("ItemCarrito")
+}
