@@ -52,9 +52,12 @@ function addToCarritoItem(e){
 }
 
 
+
+
 // en "carrito.push(newItem)" lo que hace es que, dentro de la matriz global "let carrito = []" va ir guardando cada nuevo item
 // y despues lo manda a que se vea en la pantalla, en la pagina de carrito, utilizando  "renderCarrito"
 // --> "trim()" --> quita los espacios a los lados y esto garantiza que esten iguales
+// dice que "InputElemento" será la matriz (input=entra)
 
 function addItemCarrito(newItem){
 
@@ -79,8 +82,17 @@ function addItemCarrito(newItem){
 
 
 
-// Para renderizar en la pag carrito, le pone en el HTML una clase a tbody---> 'class= "tbody"'
+// Para renderizar en la pag carrito, le pone en el HTML una clase a tbody---> 'class= "tbody"' (es el body de la tabla)
 // Para poder obtenerlo como variable global (declara al principio la variable " " ) porque se usará muchas veces.
+//map---> función de orden superior que aplica una función determinada a cada elemento de una colección, lista o conjunto, devolviendo los resultados en una nueva colección del mismo tipo. Ej:
+/* 
+var numbers = [1, 5, 10, 15];
+var doubles = numbers.map(function(x) {
+   return x * 2;
+});
+// doubles is now [2, 10, 20, 30]
+// numbers is still(siguen siendo) [1, 5, 10, 15]
+ */
 
 function renderCarrito(){
 
@@ -118,7 +130,12 @@ function renderCarrito(){
 
 
 
+
+
+
+// "itemCartTotal" en el HTML es donde se va a imprimir el valor total
 // A travez de "Number(item.precio.replace("$", ' ')".... le saca el simbolo $(dolar) al item precio... para volverlo un valor numerico.. para realizar la operacion matematica 
+
 function CarritoTotal(){
     
     let Total = 0;
@@ -151,7 +168,6 @@ function removeItemCarrito (e){
         for(let i=0; i<carrito.length; i++){
             if(carrito[i].title.trim() === title.trim()){
                 carrito.splice(i, 1)
-                console.log('hola mundo')
             }
         }
 
@@ -159,7 +175,42 @@ function removeItemCarrito (e){
     CarritoTotal()
 }
 
-function sumaCantidad(e){
-    const suma = e.target
-    const tr = sumaImput.closest("ItemCarrito")
+//*************************************************************************** */
+
+
+
+
+
+
+function  sumaCantidad(e){
+    const sumaInput  = e.target
+    const tr = sumaInput.closest(".ItemCarrito")
+    const title = tr.querySelector('.title').textContent;
+    carrito.forEach(item => {
+        if(item.title.trim() === title){
+            sumaInput.value < 1 ?   (sumaInput.value = 1) : sumaInput.value;
+            item.cantidad = sumaInput.value;
+            CarritoTotal()
+        }
+    })
+ 
 }
+
+function addLocalStorage (){      
+    localStorage.setItem('carrito',Json.stringify(carrito));
+}
+
+window.onload = function(){
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage){
+        carrito = storage;
+        renderCarrito()
+
+    }
+}
+
+
+
+
+
+

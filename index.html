@@ -17,270 +17,345 @@
 
   <body>
     <header class="container-fluid bg-dark position-sticky top-0">
-        <ul
-            class="nav nav-pills mb-3 py-3 container"
-            id="pills-tab"
-            role="tablist"
-        >
-            <li class="nav-item" role="presentation">
-            <a
-                class="nav-link"
-                id="pills-home-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-home"
-                type="button"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-                >Inicio</a
-            >
-            </li>
-            <li class="nav-item" role="presentation">
-            <a
-                class="nav-link active"
-                id="pills-profile-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-profile"
-                type="button"
-                role="tab"
-                aria-controls="pills-profile"
-                aria-selected="false"
-                >Productos</a
-            >
-            </li>
-            <li class="nav-item" role="presentation">
-            <a
-                class="nav-link"
-                id="pills-contact-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-contact"
-                type="button"
-                role="tab"
-                aria-controls="pills-contact"
-                aria-selected="false"
-                >Carrito</a
-            >
-            </li>
-        </ul>
+      <ul
+        class="nav nav-pills mb-3 py-3 container"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-home"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-contact-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-contact"
+            type="button"
+            role="tab"
+            aria-controls="pills-contact"
+            aria-selected="false"
+            >Carrito</a
+          >
+        </li>
+      </ul>
     </header>
 
     <div class="tab-content" id="pills-tabContent">
-            <div
-                class="tab-pane fade"
-                id="pills-home"
-                role="tabpanel"
-                aria-labelledby="pills-home-tab"
-            >
-            <br>
-            <h2 class="h4 m-4 text-primary">  INICIO</h2> 
-                
-            </div>
+      <div
+        class="tab-pane fade"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <br />
+        <h2 class="h4 m-4 text-primary">INICIO</h2>
+      </div>
 
+      <!--   ------------------- TARJETAS - PRODUCTOS -------------------------- -->
+      <!-- Card title -->
 
-
-
-
-
-<!--   ------------------- TARJETAS - PRODUCTOS -------------------------- -->
-<!-- Card title -->
-
+      <div
+        class="tab-pane fade show active container"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab"
+      >
+        <h2 class="h4 m-4 text-primary">PRODUCTOS</h2>
+        <br />
         <div
-            class="tab-pane fade show active container"
-            id="pills-profile"
-            role="tabpanel"
-            aria-labelledby="pills-profile-tab"
+          class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
         >
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 1
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/128/200/130.jpg?hmac=ECJGGcNGIioUmEvhi-OJ9QG2zKCriRGW6bPP99nS-9I"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
 
-            <h2 class="h4 m-4 text-primary"> PRODUCTOS</h2>
-              <br>
-                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 ">
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  1</h5>
-                                    <img src="https://i.picsum.photos/id/128/200/130.jpg?hmac=ECJGGcNGIioUmEvhi-OJ9QG2zKCriRGW6bPP99nS-9I" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  2</h5>
-                                    <img src="https://i.picsum.photos/id/55/200/130.jpg?hmac=tNfj1jh1allZ4Iwv5bkcDBVkfDZsgcG_H-osbAandjU" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  3</h5>
-                                    <img src="https://i.picsum.photos/id/9/200/130.jpg?hmac=54WuyGLkeOEhORxV_5TkLzrd9Be8cXed8Bbxex1FZT0" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50"> Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  4</h5>
-                                    <img src="https://i.picsum.photos/id/1068/200/130.jpg?hmac=FiiCGq8GsY9EVgBhy7U4yImlluRD7Is-IP-pWurucHg" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  5</h5>
-                                    <img src="https://i.picsum.photos/id/970/200/130.jpg?hmac=hNInxZQfWcfbnR2ndo-DhqORnSW9_uycIxWWZ_5y5tg" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  6 </h5>
-                                    <img src="https://i.picsum.photos/id/534/200/130.jpg?hmac=ltUj0qdVNpa909dTvrXLBtFyhvSZ3tBygRwpSBsBrfE" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  7</h5>
-                                    <img src="https://i.picsum.photos/id/1071/200/130.jpg?hmac=bjp-W28WBWgW74Vc9WvwSyjU1HCzc4gQ9EwWMpVw-_A" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col d-flex justify-content-center mb-4">
-                                <div class="card shadow mb-1 bg-light rounded" style="width: 20rem;">  
-                                    <h5 class="card-title pt-2 text-center text-primary">Producto  8</h5>
-                                    <img src="https://i.picsum.photos/id/388/200/130.jpg?hmac=5YTgWmBQ5UhQJIgdk5DqRaR2o9dMM8Htd8sBiujGTG4" class="card-img-top p-2" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text description text-black-50">Some quick example text to build on the Producto  and make up the bulk of the card's content.</p>
-                                            <h5 class="text-primary">Precio: <span class="precio">$5</span></h5>
-                                            
-                                            <div class="d-grid gap-2">
-                                            <button class="btn btn-primary button">Añadir al Carrito</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 2
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/55/200/130.jpg?hmac=tNfj1jh1allZ4Iwv5bkcDBVkfDZsgcG_H-osbAandjU"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 3
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/9/200/130.jpg?hmac=54WuyGLkeOEhORxV_5TkLzrd9Be8cXed8Bbxex1FZT0"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 4
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/1068/200/130.jpg?hmac=FiiCGq8GsY9EVgBhy7U4yImlluRD7Is-IP-pWurucHg"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 5
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/970/200/130.jpg?hmac=hNInxZQfWcfbnR2ndo-DhqORnSW9_uycIxWWZ_5y5tg"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 6
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/534/200/130.jpg?hmac=ltUj0qdVNpa909dTvrXLBtFyhvSZ3tBygRwpSBsBrfE"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 7
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/1071/200/130.jpg?hmac=bjp-W28WBWgW74Vc9WvwSyjU1HCzc4gQ9EwWMpVw-_A"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-light rounded" style="width: 20rem">
+              <h5 class="card-title pt-2 text-center text-primary">
+                Producto 8
+              </h5>
+              <img
+                src="https://i.picsum.photos/id/388/200/130.jpg?hmac=5YTgWmBQ5UhQJIgdk5DqRaR2o9dMM8Htd8sBiujGTG4"
+                class="card-img-top p-2"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text description text-black-50">
+                  Some quick example text to build on the Producto and make up
+                  the bulk of the card's content.
+                </p>
+                <h5 class="text-primary">
+                  Precio: <span class="precio">$5</span>
+                </h5>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button">
+                    Añadir al Carrito
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <!--   ------------------- CARRITO -------------------------- -->
 
-
-
-
-
-
-
-
-
-
-<!--   ------------------- CARRITO -------------------------- -->
-
-    <div
+      <div
         class="tab-pane fade carrito"
         id="pills-contact"
         role="tabpanel"
         aria-labelledby="pills-contact-tab"
-    >
+      >
+        <br />
+        <h2 class="h4 m-4 text-primary">CARRITO</h2>
+        <br />
+        <table class="table table-striped">
+          <thead>
+            <tr class="text-primary">
+              <th scope="col">#</th>
+              <th scope="col">Productos</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
 
-        <br>
-        <h2 class="h4 m-4 text-primary"> CARRITO</h2>
-        <br>
-            <table class="table table-striped">
-                    <thead>
-                        <tr class="text-primary">
-                            <th scope="col">#</th>
-                            <th scope="col">Productos</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tbody">
+        <br /><br />
 
-
-                    </tbody>
-            </table>
-
-    <br><br>
-
-            <div class="row mx-4">
-                <div class="col">
-                    <h3 class="itemCartTotal text-primary"> Total: 0</h3>
-                </div>
-                <div class="col d-flex justify-content-end">
-                    <button class="btn btn-success">COMPRAR</button>
-                </div>
-            </div>
-
+        <div class="row mx-4">
+          <div class="col">
+            <h3 class="itemCartTotal text-primary">Total: 0</h3>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button class="btn btn-success">COMPRAR</button>
+          </div>
+        </div>
       </div>
     </div>
 
-
-
-    
     <footer class="bg-light p-3 mt-5">
-        <p class="text-center m-0 text-muted bel">JAVASCRIPT + BOOTSTRAP ---> BELEN MAYO </p>
+      <p class="text-center m-0 text-muted bel">
+        JAVASCRIPT VANILLA + BOOTSTRAP ---> BELEN MAYO
+      </p>
     </footer>
-
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
