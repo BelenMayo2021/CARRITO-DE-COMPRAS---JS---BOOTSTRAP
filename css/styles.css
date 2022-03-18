@@ -2,9 +2,12 @@ body{
     background-color: rgb(236, 242, 255);
 }
 
-header{
+
+
+header, .alert {
     z-index: 100; /*  para que siempre este por encima de los demas */
 }
+
 
 .description{
     height: 25px;
@@ -48,5 +51,7 @@ header{
 }
 
 
-
+.hide, .remove {
+    display: none;
+}
 
