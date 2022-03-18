@@ -100,7 +100,7 @@ function renderCarrito(){
 
         carrito.map(item =>{
             const tr = document.createElement('tr')
-            tr.classList.add ('itemCarrito')
+            tr.classList.add ('ItemCarrito')
             
             const Content = `
 
@@ -121,11 +121,12 @@ function renderCarrito(){
             tr.innerHTML = Content;
             tbody.append(tr)
 
-            tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
-            tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+            tr.querySelector(".delete").addEventListener('click', removeItemCarrito) //PARA CUANDO ELIMINAN DESDE LA "X"
+            tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)// P/AGREGAN MANUAL POR EL INPUT
 
         })
-        CarritoTotal()
+
+    CarritoTotal()
 }
 
 
@@ -134,7 +135,10 @@ function renderCarrito(){
 
 
 // "itemCartTotal" en el HTML es donde se va a imprimir el valor total
+// el "forEach" va a recorrer la matriz principal de carrito donde se ejecutan todos los items
 // A travez de "Number(item.precio.replace("$", ' ')".... le saca el simbolo $(dolar) al item precio... para volverlo un valor numerico.. para realizar la operacion matematica 
+// ésta funcion "function CarritoTotal()" se va a ejecutar dentro de la funcion creada anteriormente "function addItemCarrito(newItem)" y cuando se renderize el producto tambien "function renderCarrito()"
+
 
 function CarritoTotal(){
     
@@ -144,10 +148,11 @@ function CarritoTotal(){
     
         carrito.forEach((item) => {
             const precio = Number(item.precio.replace("$", ' '))
-            Total = Total + precio* item.cantidad
+            Total = Total + precio * item.cantidad
         })
         
-        itemCartTotal.innerHTML = `Total $${Total}`
+        itemCartTotal.innerHTML = `Total $ ${Total}`
+        addLocalStorage()
 }
 
 
@@ -159,13 +164,16 @@ function CarritoTotal(){
 // --> "trim()" --> quita los espacios a los lados y esto garantiza que esten iguales
 // recorre la matriz a traves del "for"
 // "carrito.splice(i, 1)" eliminamos un elemento dentro del carrito (i:posicion donde este el elemnto...1: cantidad de elem a eliminar)
+// vuelve a poner "CarritoTotal()" al final para volver a ejecutar la sumatoria ya que recien termino de eliminar algun producto
 
 function removeItemCarrito (e){
+
     const buttonDelete = e.target
     const tr = buttonDelete.closest('.ItemCarrito')
     const title = tr.querySelector('.title').textContent;
 
         for(let i=0; i<carrito.length; i++){
+
             if(carrito[i].title.trim() === title.trim()){
                 carrito.splice(i, 1)
             }
@@ -175,29 +183,44 @@ function removeItemCarrito (e){
     CarritoTotal()
 }
 
-//*************************************************************************** */
 
 
 
 
 
+
+// P/AGREGAN CANTIDADES MANUALMENTE POR EL INPUT
+// "sumaInput.value < 1 ?" ----> esto es para evitar que alguien ponga en el input manualmente -2, -5, etc.
+// esto "sumaInput.value"----> significa "en caso contrario.. nos quedamos con este valor (sumaInput, en este caso) "
 
 function  sumaCantidad(e){
     const sumaInput  = e.target
     const tr = sumaInput.closest(".ItemCarrito")
     const title = tr.querySelector('.title').textContent;
-    carrito.forEach(item => {
-        if(item.title.trim() === title){
-            sumaInput.value < 1 ?   (sumaInput.value = 1) : sumaInput.value;
-            item.cantidad = sumaInput.value;
-            CarritoTotal()
-        }
+
+        carrito.forEach(item => { // "item" seria la matriz
+
+            if(item.title.trim() === title){
+                sumaInput.value < 1 ?   (sumaInput.value = 1) : sumaInput.value;
+                item.cantidad = sumaInput.value;
+                CarritoTotal()
+            }
     })
- 
+ console.log(carrito)
 }
 
-function addLocalStorage (){      
-    localStorage.setItem('carrito',Json.stringify(carrito));
+
+
+
+
+
+
+
+// PRODUCTOS QUE QUEDAN GRABADOS EN LA MEMORIA AL ACTUALIZAR LA PESTAÑA
+
+
+function addLocalStorage(){      
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 window.onload = function(){
